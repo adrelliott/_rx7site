@@ -5,7 +5,7 @@ fields:
     field:
       hide_partials: true
       blueprint: false
-      folder: components
+      folder: elements
       display: 'Element Template'
       type: template
       icon: template

@@ -4,7 +4,7 @@ blueprint: page_builder
 title: 'Page builder'
 builder:
   -
-    template: components/cta
+    template: elements/cta-01
     image: donut.jpg
     headline: 'head 01'
     plain_text: 'plain 01'
@@ -20,5 +20,5 @@ builder:
     type: element
     enabled: true
 updated_by: 473b8f38-716a-4498-94a6-41393a63bd6f
-updated_at: 1662649861
+updated_at: 1662651343
 ---
