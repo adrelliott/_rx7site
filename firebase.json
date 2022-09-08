@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "storage/app/static",
+    "predeploy": "php please ssg:generate",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
