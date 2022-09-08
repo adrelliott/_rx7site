@@ -3,21 +3,20 @@
         <h1>{{ $title }}</h1>
         {{ $intro }}
         <div class="my-12 flex items-center justify-center">
-            {{ if $author }}
-            <img src="{{ $author:avatar ?? $author:email | gravatar(160) }}" class="h-20 w-20 my-0 rounded-full mr-4">
-            {{ /if }}
-            <div class="text-left">
-                {{ if author }}
-                <div>
-                    <a class="font-bold no-underline" href="/authors/{{ $author:handle }}">
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-hot-pink to-purple-500">
-                            {{ $author:name }}
-                        </span>
-                    </a>
+            {{ if written_by }}
+                <img src="assets/{{ $written_by }}.png" class="h-20 w-20 my-0 rounded-full mr-4">
+                <div class="text-left">
+                    <div>
+                        <p class="font-bold no-underline "> 
+                            Written by
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-hot-pink to-purple-500">
+                                {{ written_by:label }}
+                            </span>
+                        </p>
+                    </div>
+                    <time datetime="{{ $date | format('Y-m-d') }}">{{ $date }}</time>
                 </div>
-                {{ /if }}
-                <time datetime="{{ $date | format('Y-m-d') }}">{{ $date }}</time>
-            </div>
+            {{ /if }}
         </div>
     </header>
     <img class="rounded-xl" src="{{ $hero_image }}" alt="{{ $hero_image:alt }}">

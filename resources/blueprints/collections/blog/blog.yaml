@@ -96,7 +96,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
@@ -109,6 +108,27 @@ sections:
           validate:
             - required
       -
+        handle: written_by
+        field:
+          options:
+            al: 'Al Elliott'
+            lea: 'Leanne Elliott'
+          multiple: false
+          max_items: 1
+          clearable: false
+          searchable: false
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: lea
+          display: 'Written By'
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: author
         field:
           max_items: 1
@@ -117,3 +137,6 @@ sections:
           listable: true
           display: Author
           default: current
+          instructions_position: above
+          visibility: read_only
+          always_save: false

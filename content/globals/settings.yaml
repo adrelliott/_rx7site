@@ -1,7 +1,7 @@
 title: Settings
 data:
-  site_name: 'Starter''s Creek'
-  personality: casual
+  site_name: "Starter's Creek"
+  personality: formal
   show_signup: true
   social:
     -

@@ -2,3 +2,7 @@ name: 'Al Elliott'
 super: true
 id: 473b8f38-716a-4498-94a6-41393a63bd6f
 password_hash: $2y$10$j6w7sI.kGIRm2dtTjS6bUuvi6lB3UADwQ09OWSv9ylngMfS/dEqtK
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

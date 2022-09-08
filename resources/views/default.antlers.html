@@ -1,1 +1,100 @@
+{{ if builder }}
+    {{ builder }}
+        {{ partial:{template} }}
+    {{ /builder }}
+
+{{ else }}
+    <section class="max-w-3xl mx-auto py-6 lg:py-12 content">
+        {{ if markdown_on }}
+            {{ $markdown_content }}
+        {{ else }}
+            {{ main_content }}
+
+                {{ if $type == "text" }}
+                    {{ $text }}
+                
+                {{ elseif $type == "code_snippet" }}
+                    <pre class="language-{{ $mode ?? 'php' }} rounded"><code>{{ $code }}</code></pre>
+                
+                {{ elseif $type == "image" }}
+                    <figure>
+                        <img src="{{ $image }}" alt="{{ $caption }}" />
+                        <figcaption>{{ $caption }}</figcaption>
+                    </figure>
+
+                {{ /if }}
+            
+            {{ /main_content }}
+        {{ /if }}
+    </section>
+{{  /if }}
+
+
+
+
+
+<hr class="py-24">
+
+
+<div class="container flex flex-col items-center justify-between py-16 md:py-24 md:flex-row">
+    <div class="text-center md:text-left md:pr-10 xl:pr-20 lg:w-5/12 md:w-6/12">
+                    <p class="font-bold xl:text-6xl lg:text-5xl md:text-4xl text-3xl text-indigo-900  ">
+Cloud Starter Kit
+
+</p>
+
+        
+                    <p class=" font-normal md:text-xl text-base text-bluegray-300  mt-4">
+    Cloud is the Statamic Starter Kit that you need. It's perfect for creating a personal website, a Saas or even a blog.
+</p>
+
+        
+                    <div class="mt-10">
+                    <a href="https://statamic.com/starter-kits/luckymedia/cloud" class=" inline-flex items-center font-bold rounded-full focus:outline-none focus-visible:ring focus:ring-purple-500 focus:ring-opacity-20 focus-visible:ring-offset-2 transition-all ease-in-out duration-300 group px-6 py-4 text-base bg-purple-500 text-white border-2 border-purple-500 hover:bg-white hover:text-purple-500  ">
+
+        
+        Try it now
+
+            </a>
+
+            </div>
+            </div>
+    <div class="mt-16 lg:w-7/12 md:w-6/12 md:mt-0">
+            <picture>
+                                    <source srcset="
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/60f7d8b82048a9a7f8a23f70ab6b51c0.webp 320w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/a36ddc6b8bdc0e78b2989bdfd514d3f8.webp 480w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/1201942b053248ea8dfc7b98acb5b365.webp 768w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/b20f7895fc53d4f4e7be61c104ddf992.webp 1280w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/7278f5ac1d4238063153deb18d0760e1.webp 1440w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/0b97f3af75cc2d5a1a6b3a3dd38b2061.webp 1680w" sizes="(min-width: 768px) 35vw, 80vw" type="image/webp">
+                <source srcset="
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/46013be8cf375e99a0d5831400220345.png 320w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/c3fb5bce4b77e94d3fbe115fde61e029.png 480w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/6032aae5400d0793f46279d14f924c89.png 768w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/bf1cef56e5940002c34e512da36c81a0.png 1280w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/66117e5dc703dfeb676218d7abda1b9a.png 1440w,
+                        https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/f7ae0dd05c5ae09ab0e0289e7633ba48.png 1680w" sizes="(min-width: 768px) 35vw, 80vw" type="image/png">
+                <img class="object-cover w-full h-full " style="object-position: 50% 50%" src="https://cloud.luckymedia.dev/img/containers/assets/images/cloud_hero.png/bf1cef56e5940002c34e512da36c81a0.png" alt="">
+                    
+    </picture>
+
+    </div>
+</div>
 {{ $content }}
+<hr>
+
+
+{{ page_builder }}
+            {{ if $type == "text" }}
+                {{ $text }}
+            {{ elseif $type == "code_snippet" }}
+<pre class="language-{{ $mode ?? 'php' }} rounded"><code>{{ $code }}</code></pre>
+            {{ elseif $type == "image" }}
+                <figure>
+                    <img src="{{ $image }}" alt="{{ $caption }}" />
+                    <figcaption>{{ $caption }}</figcaption>
+                </figure>
+            
+            {{ /if }}
+        {{ /page_builder }}
