@@ -1,8 +1,7 @@
 <article class="max-w-5xl mx-auto px-3">
     <header class="mx-auto max-w-3xl text-center content">
-        <h1>{{ $title }}</h1>
-        {{ $intro }}
-        <div class="my-12 flex items-center justify-center">
+        <h1 class="mb-0">{{ $title }}</h1>
+        <div class="my-8 flex items-center justify-center">
             {{ if written_by }}
                 <img src="assets/{{ $written_by }}.png" class="h-20 w-20 my-0 rounded-full mr-4">
                 <div class="text-left">
@@ -20,6 +19,10 @@
         </div>
     </header>
     <img class="rounded-xl" src="{{ $hero_image }}" alt="{{ $hero_image:alt }}">
+    <section class="text-center content text-2xl mt-12 font-light italic">
+        {{ $intro }}
+        <hr class="w-2/6 mx-auto border-b-2 border-orange-500" />
+    </section>
     <section class="max-w-3xl mx-auto py-6 lg:py-12 content">
         {{ main_content }}
             {{ if $type == "text" }}
