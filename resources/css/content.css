@@ -43,7 +43,7 @@
     }
 
     a {
-        @apply font-bold underline text-hot-pink;
+        @apply font-bold underline text-oblong-hot-pink;
         &:hover {
             @apply text-black;
         }
