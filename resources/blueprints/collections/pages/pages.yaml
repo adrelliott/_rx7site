@@ -4,6 +4,19 @@ sections:
     display: Main
     fields:
       -
+        handle: page_builder
+        field:
+          inline_label: 'Turn on page builder'
+          default: false
+          display: 'Page Builder'
+          type: toggle
+          icon: toggle
+          instructions: 'Turn on the page builder (ignores all typed content)'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
         handle: title
         field:
           type: text
@@ -22,6 +35,8 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          if:
+            page_builder: 'equals 0'
       -
         handle: main_content
         field:
@@ -85,6 +100,7 @@ sections:
           instructions: 'Write your content here'
           if:
             markdown_on: 'equals 0'
+            page_builder: 'equals 0'
       -
         handle: markdown_content
         field:
@@ -104,6 +120,7 @@ sections:
           instructions: 'Use this if you prefer to write in Markdown'
           if:
             markdown_on: 'equals 1'
+            page_builder: 'equals 0'
       -
         handle: hero_image
         field:
@@ -120,6 +137,29 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          if:
+            page_builder: 'equals 0'
+      -
+        handle: builder
+        field:
+          collapse: accordion
+          previews: true
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  import: templates
+          display: 'Page Elements'
+          type: replicator
+          icon: replicator
+          instructions: 'Select which elements to use'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          unless:
+            page_builder: 'equals 0'
   sidebar:
     display: Sidebar
     fields:
@@ -153,9 +193,3 @@ sections:
           visibility: read_only
           always_save: false
           mode: select
-      -
-        handle: template
-        field:
-          type: template
-          display: Template
-          localizable: true
