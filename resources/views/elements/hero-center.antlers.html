@@ -1,0 +1,13 @@
+<section class="bg-gray-100">
+    <div class="container mx-auto flex flex-col items-center py-12 sm:py-24">
+        <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mx-auto text-center ">
+            {{ partial:components/hero-h1 }}
+            {{ partial:components/hero-para }}
+        </div>
+        {{ if button_text }}
+            <div class="flex justify-center items-center mt-6 sm:mt-8">
+                {{ partial:components/button }}
+            </div>
+        {{ /if }}
+    </div>
+</section>

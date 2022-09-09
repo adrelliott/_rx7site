@@ -1,0 +1,26 @@
+<div class="container px-3 mx-auto flex flex-wrap flex-col-reverse 
+    {{ if hero_right }} md:flex-row-reverse {{ else }} md:flex-row {{ /if }}
+    justify-between ">
+    <!--Left Col-->
+    <div class="flex flex-col w-full md:w-1/2 md:items-start text-center md:text-left">
+
+        {{ partial:components/hero-subhead }}
+        {{ partial:components/hero-h1 }}
+        {{ partial:components/hero-para }}
+
+        {{ if button_text }}
+            <div class="flex justify-center items-center mt-4 sm:mt-6">
+                {{ partial:components/button }}
+            </div>
+        {{ /if }}
+
+    </div>
+
+    <!--Right Col-->
+    <div class="w-full md:w-1/2 py-6 flex 
+        {{ if hero_right }} md:justify-start {{ else }} md:justify-end {{ /if }}
+    ">
+        <img class="w-full md:w-4/5 z-50" src="{{ $image ?? 'https://www.tailwindtoolbox.com/templates/hero.png' }}" />
+    </div>
+
+</div>

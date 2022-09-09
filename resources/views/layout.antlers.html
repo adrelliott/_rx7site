@@ -26,9 +26,17 @@
     </head>
     <body class="bg-white text-black font-body leading-normal personality-{{ $settings:personality }}">
         {{ partial:partials/nav }}
-        <main class="py-12 lg:py-20">
-            {{ $template_content }}
-        </main>
+
+        {{  if ! page_builder }}
+            <main class="py-12 lg:py-20">
+                {{ $template_content }}
+            </main>
+        {{  else }}
+            <main>
+                {{ $template_content }}
+            </main>
+        {{ /if }}
+        
         {{ partial:partials/footer }}
         {{ partial:partials/extras }}
     </body>
