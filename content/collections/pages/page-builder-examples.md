@@ -5,7 +5,7 @@ page_builder: true
 title: 'Page Builder examples'
 author: 473b8f38-716a-4498-94a6-41393a63bd6f
 updated_by: 473b8f38-716a-4498-94a6-41393a63bd6f
-updated_at: 1662714761
+updated_at: 1662720407
 builder:
   -
     template: elements/hero-center
@@ -17,6 +17,7 @@ builder:
     button_text: 'Start now'
     button_link: /boot
     button_type: standard
+    bg_color: gray
   -
     template: elements/hero-left
     headline: 'Hero left which does the thing with the thing'
@@ -29,6 +30,7 @@ builder:
     enabled: true
     image: octopus.jpg
     subhead_text: 'Subhead would go here'
+    bg_color: white
   -
     template: elements/hero-right
     headline: 'Hero right which does the thing with the thing'
@@ -41,4 +43,52 @@ builder:
     enabled: true
     image: octopus.jpg
     subhead_text: 'Subhead would go here'
+    bg_color: white
+  -
+    template: elements/content-columns
+    bg_color: white
+    button_show: false
+    columns:
+      -
+        col_headline: 'col 1'
+        type: column
+        enabled: true
+        col_plain_text: 'plain text'
+        col_rich_text:
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'rich '
+              -
+                type: text
+                marks:
+                  -
+                    type: bold
+                text: text.
+          -
+            type: heading
+            attrs:
+              level: 3
+            content:
+              -
+                type: text
+                text: 'healdin '
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'now more stuff'
+      -
+        col_headline: 'col 2'
+        type: column
+        enabled: true
+      -
+        col_headline: 'col 3'
+        type: column
+        enabled: true
+    type: new_set
+    enabled: true
 ---

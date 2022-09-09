@@ -1,0 +1,26 @@
+<section>
+	<div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+		<div class="
+			grid w-full gap-12 mx-auto grid-cols-1 
+
+			{{ if columns | count == 2 }}
+				lg:grid-cols-2
+			{{ elseif columns | count == 3 }}
+				lg:grid-cols-3
+			{{ /if }}
+		">
+			{{ columns }}
+				<div class="p-6">
+					<h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+						{{ col_headline }}
+					</h1>
+					<p class="mx-auto text-base leading-relaxed text-gray-500 prose">
+						{{ col_plain_text }}
+						{{ col_rich_text }}
+					</p>
+				</div>
+			{{ /columns }}
+
+		</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+title: Buttons
+fields:
+  -
+    handle: button
+    field: templates.button_show
+  -
+    handle: button_type
+    field: templates.button_type
+    config:
+      if:
+        button_show: 'equals 1'
+  -
+    handle: button_text
+    field: templates.button_text
+    config:
+      if:
+        button_show: 'equals 1'
+  -
+    handle: button_link
+    field: templates.button_link
+    config:
+      if:
+        button_show: 'equals 1'
