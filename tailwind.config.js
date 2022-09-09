@@ -1,3 +1,5 @@
+const { line } = require('laravel-mix/src/Log')
+
 module.exports = {
   content: [
     './resources/**/*.antlers.html',
@@ -13,6 +15,17 @@ module.exports = {
         fontFamily: {
             display: "var(--font-display)",
             body: "var(--font-body)",
+        },
+        typography: {
+          DEFAULT: {
+            css: {
+              color: '#333',
+              "ul > li > p": {
+                "margin-top": "0px",
+                "margin-bottom": "0px",
+              },
+            },
+          },
         }
     },
   },
